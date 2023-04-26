@@ -1,10 +1,12 @@
 package Travel_Bookin_System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,5 +32,17 @@ public class Hotel {
 
     @Column(name = "noOfRoom")
     Integer noOfRoom;
+
+    @OneToMany(mappedBy = "Hotel")
+    @JsonIgnore
+    List<Customer> customer;
+
+    @OneToMany(mappedBy = "Hotel")
+    @JsonIgnore
+    List<Booking> booking;
+
+    @OneToMany(mappedBy = "Hotel")
+    @JsonIgnore
+    List<Car_Rental> car;
 
 }

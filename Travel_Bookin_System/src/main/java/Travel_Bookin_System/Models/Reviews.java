@@ -1,10 +1,12 @@
 package Travel_Bookin_System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,4 +27,8 @@ public class Reviews {
 
     @Column(name = "review_type")
     String type;
+
+    @OneToMany(mappedBy = "Reviews")
+    @JsonIgnore
+    List<Rating> rating;
 }

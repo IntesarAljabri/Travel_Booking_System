@@ -14,7 +14,7 @@ public class CancellationServices {
     public List<Cancellation> getAllCancellation() {
         return cancellationRepositories.findAll();
     }
-    public Cancellation getItemById (Integer id){
+    public Cancellation getCancellationById (Integer id){
         return cancellationRepositories.findById(id).get();
     }
 
