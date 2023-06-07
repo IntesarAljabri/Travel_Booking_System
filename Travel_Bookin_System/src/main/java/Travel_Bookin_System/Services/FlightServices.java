@@ -3,7 +3,7 @@ package Travel_Bookin_System.Services;
 import Travel_Bookin_System.Models.Booking;
 import Travel_Bookin_System.Models.Flight;
 import Travel_Bookin_System.Repositories.BookingRepositories;
-import Travel_Bookin_System.Repositories.FlightRepositpries;
+import Travel_Bookin_System.Repositories.FlightRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class FlightServices {
 
     @Autowired
-    FlightRepositpries flightRepositories;
+    FlightRepositories flightRepositories;
 
     public List<Flight> getAllFlight() {
         return flightRepositories.findAll();
